@@ -4,12 +4,10 @@ import com.hotel.hotel.command.domain.model.validator.GuestValidator;
 
 public class Guest {
 
-	private Long id;
 	private Long numberID;
 	private String name;
 
 	public Guest() {
-		id = 0L;
 		numberID = 0L;
 		name = "";
 	}
@@ -17,21 +15,12 @@ public class Guest {
 	public Guest(Long id, Long numberID, String name) {
 		GuestValidator.verifyNumberID(numberID);
 		GuestValidator.verifyName(name);
-		this.id = id;
 		this.numberID = numberID;
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Long getNumberID() {
@@ -45,6 +34,11 @@ public class Guest {
 	public void setName(String name) {
 		GuestValidator.verifyName(name);
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Guest [numberID=" + numberID + ", name=" + name + "]";
 	}
 
 }

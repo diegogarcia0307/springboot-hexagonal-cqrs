@@ -1,0 +1,1 @@
+insert into room (idRoom, roomName, type, capacity, numBeds) values (null, :roomName, :type, :capacity, :numBeds)

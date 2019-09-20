@@ -1,22 +1,20 @@
 package com.hotel.hotel.command.aplication.command;
 
-import java.util.Date;
-
 import com.hotel.hotel.command.domain.model.Guest;
 import com.hotel.hotel.command.domain.model.Room;
 
 public class RentalCommand {
 	private Room room;
 	private Guest guest;
-	private Date checkIn;
-	private Date checkOut;
 
-	public RentalCommand(Room room, Guest guest, Date checkIn, Date checkOut) {
-		super();
+	public RentalCommand() {
+		room = new Room();
+		guest = new Guest();
+	}
+
+	public RentalCommand(Room room, Guest guest) {
 		this.room = room;
 		this.guest = guest;
-		this.checkIn = checkIn;
-		this.checkOut = checkOut;
 	}
 
 	public Room getRoom() {
@@ -35,20 +33,9 @@ public class RentalCommand {
 		this.guest = guest;
 	}
 
-	public Date getCheckIn() {
-		return checkIn;
-	}
-
-	public void setCheckIn(Date checkIn) {
-		this.checkIn = checkIn;
-	}
-
-	public Date getCheckOut() {
-		return checkOut;
-	}
-
-	public void setCheckOut(Date checkOut) {
-		this.checkOut = checkOut;
+	@Override
+	public String toString() {
+		return "RentalCommand [room=" + room + ", guest=" + guest + "]";
 	}
 
 }

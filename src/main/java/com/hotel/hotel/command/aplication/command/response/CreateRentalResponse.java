@@ -5,11 +5,11 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateRentalCommandResponse {
+public class CreateRentalResponse {
 
 	private Long id;
 
-	public CreateRentalCommandResponse(Long id) {
+	public CreateRentalResponse(Long id) {
 		this.id = id;
 	}
 

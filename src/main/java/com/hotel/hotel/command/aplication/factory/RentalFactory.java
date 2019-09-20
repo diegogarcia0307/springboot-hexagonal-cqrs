@@ -9,7 +9,7 @@ import com.hotel.hotel.command.domain.model.Rental;
 public class RentalFactory {
 
 	public Rental create(RentalCommand rentalCommand) {
-		return new Rental(rentalCommand.getRoom(), rentalCommand.getGuest(), rentalCommand.getCheckIn(),
-				rentalCommand.getCheckOut());
+		return new Rental(rentalCommand.getRoom(), rentalCommand.getGuest());
 	}
+
 }

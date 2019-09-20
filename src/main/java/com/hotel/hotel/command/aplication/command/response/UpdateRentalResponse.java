@@ -1,12 +1,11 @@
 package com.hotel.hotel.command.aplication.command.response;
 
-public class DeleteRentalCommandResponse {
-
+public class UpdateRentalResponse {
 	private boolean requestEstate;
 	private String messageRequest;
 
-	public DeleteRentalCommandResponse(boolean requestEstate) {
-		messageRequest = requestEstate ? "Registro eliminado con éxito." : "El registro no se pudo eliminar.";
+	public UpdateRentalResponse(boolean requestEstate) {
+		messageRequest = requestEstate ? "Registro actualizado con éxito." : "El registro no se pudo actualizar.";
 		this.requestEstate = requestEstate;
 	}
 
@@ -25,5 +24,4 @@ public class DeleteRentalCommandResponse {
 	public void setMessageRequest(String messageRequest) {
 		this.messageRequest = messageRequest;
 	}
-
 }

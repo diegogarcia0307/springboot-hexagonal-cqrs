@@ -3,7 +3,7 @@ package com.hotel.hotel.command.aplication.handler;
 import org.springframework.stereotype.Component;
 
 import com.hotel.hotel.command.aplication.command.RentalCommand;
-import com.hotel.hotel.command.aplication.command.response.CreateRentalCommandResponse;
+import com.hotel.hotel.command.aplication.command.response.CreateRentalResponse;
 import com.hotel.hotel.command.aplication.factory.RentalFactory;
 import com.hotel.hotel.command.domain.model.Rental;
 import com.hotel.hotel.command.domain.service.CreateRentalService;
@@ -19,9 +19,9 @@ public class CreateRentalHandler {
 		this.rentalFactory = rentalFactory;
 	}
 
-	public CreateRentalCommandResponse exect(RentalCommand rentalCommand) {
+	public CreateRentalResponse exect(RentalCommand rentalCommand) {
 		Rental rental = rentalFactory.create(rentalCommand);
-		return new CreateRentalCommandResponse(createRentalService.exect(rental));
+		return new CreateRentalResponse(createRentalService.exect(rental));
 	}
 
 }

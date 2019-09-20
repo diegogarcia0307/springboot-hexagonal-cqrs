@@ -1,0 +1,1 @@
+insert into rental (idRental, idRoom, idGuest, checkIn, CheckOut) values (null , :idRoom , :idGuest , :checkIn , null)

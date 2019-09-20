@@ -2,7 +2,7 @@ package com.hotel.hotel.command.aplication.handler;
 
 import org.springframework.stereotype.Component;
 
-import com.hotel.hotel.command.aplication.command.response.DeleteRentalCommandResponse;
+import com.hotel.hotel.command.aplication.command.response.DeleteRentalResponse;
 import com.hotel.hotel.command.domain.service.DeleteRentalService;
 
 @Component
@@ -14,7 +14,7 @@ public class DeleteRentalHandler {
 		this.deleteRentalService = deleteRentalService;
 	}
 
-	public DeleteRentalCommandResponse exec(Long id) {
-		return new DeleteRentalCommandResponse(deleteRentalService.exect(id));
+	public DeleteRentalResponse exec(Long id) {
+		return new DeleteRentalResponse(deleteRentalService.exect(id));
 	}
 }

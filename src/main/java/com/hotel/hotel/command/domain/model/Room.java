@@ -64,4 +64,10 @@ public class Room {
 		this.numBeds = numBeds;
 	}
 
+	@Override
+	public String toString() {
+		return "Room [roomName=" + roomName + ", type=" + type + ", capacity=" + capacity + ", numBeds=" + numBeds
+				+ "]";
+	}
+
 }

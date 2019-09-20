@@ -1,6 +1,6 @@
 package com.hotel.hotel.command.domain.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import com.hotel.hotel.command.domain.model.validator.RentalValidator;
 
@@ -8,24 +8,23 @@ public class Rental {
 
 	private Room room;
 	private Guest guest;
-	private Date checkIn;
-	private Date checkOut;
+	private Calendar checkIn;
+	private Calendar checkOut;
 
 	public Rental() {
 		room = new Room();
 		guest = new Guest();
-		checkIn = new Date();
-		checkOut = new Date();
+		checkIn = Calendar.getInstance();
+		checkOut = Calendar.getInstance();
 	}
 
-	public Rental(Room room, Guest guest, Date checkIn, Date checkOut) {
-		RentalValidator.verifyDateCheckIn(checkIn);
+	public Rental(Room room, Guest guest) {
 		RentalValidator.verifyGuest(guest);
 		RentalValidator.verifyRoom(room);
 		this.room = room;
 		this.guest = guest;
-		this.checkIn = checkIn;
-		this.checkOut = checkOut;
+		this.checkIn = Calendar.getInstance();
+		this.checkOut = Calendar.getInstance();
 	}
 
 	public Room getRoom() {
@@ -46,20 +45,19 @@ public class Rental {
 		this.guest = guest;
 	}
 
-	public Date getCheckIn() {
+	public Calendar getCheckIn() {
 		return checkIn;
 	}
 
-	public void setCheckIn(Date checkIn) {
-		RentalValidator.verifyDateCheckIn(checkIn);
+	public void setCheckIn(Calendar checkIn) {
 		this.checkIn = checkIn;
 	}
 
-	public Date getCheckOut() {
+	public Calendar getCheckOut() {
 		return checkOut;
 	}
 
-	public void setCheckOut(Date checkOut) {
+	public void setCheckOut(Calendar checkOut) {
 		this.checkOut = checkOut;
 	}
 
